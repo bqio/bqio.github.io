@@ -29,10 +29,11 @@ document.getElementById("reflection").addEventListener("click", () => {
 document.getElementById("scale").addEventListener("click", () => {
   if (scale == 1.3) {
     scale = 1;
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.restore();
   } else {
     scale = 1.3;
   }
+  ctx.save();
   ctx.translate(X_POS, Y_POS);
   ctx.scale(scale, scale);
   ctx.translate(-X_POS, -Y_POS);
