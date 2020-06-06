@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      canvas {
-        border: 1px solid #ccc;
-        margin-bottom: 20px;
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <canvas id="canvas" width="200" height="250"></canvas>
-    <button id="rotate">Вращение</button>
-    <button id="scale">Масштабирование</button>
-    <button id="reflection">Отражение</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Компьютерная графика</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="500" height="500"></canvas>
+  <div id="menuContainer" class="hidden">
+    <button id="btnRotate">Вращение</button>
+    <button id="btnScale">Масштабирование</button>
+    <button id="btnReflection">Отражение</button>
     <p>Используйте стрелки для перемещения.</p>
-    <script src="app.js"></script>
-  </body>
+  </div>
+  <p>Правый клик мыши по области на холсте задает стартовую позицию фигуры.</p>
+  <script src="app.js"></script>
+</body>
+
 </html>
