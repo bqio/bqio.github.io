@@ -1,3 +1,6 @@
 [submodule "FE3H-Text-Simulator"]
 	path = FE3H-Text-Simulator
 	url = https://github.com/bqio/FE3H-Text-Simulator.git
+[submodule "movie-simple-app"]
+	path = movie-simple-app
+	url = https://github.com/bqio/movie-simple-app
