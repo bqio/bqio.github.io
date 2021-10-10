@@ -3,24 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <title>Wut?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
         body {
-            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1rem;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .card {
+            padding: 4rem 8rem;
+            border: 1px solid #f1f1f1;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            -webkit-box-shadow: 4px 4px 8px -5px rgba(34, 60, 80, 0.2);
+            -moz-box-shadow: 4px 4px 8px -5px rgba(34, 60, 80, 0.2);
+            box-shadow: 4px 4px 8px -5px rgba(34, 60, 80, 0.2);
+            font-size: 1.5rem;
+        }
+        .card:hover {
+            background-color: #3d94ed;
+            color: white;
+            border: 1px solid #3d94ed;
+        }
+        a {
+            text-decoration: none;
+            color: black;
         }
     </style>
 </head>
 <body>
     <div id="app">
-        <h2>Projects</h2>
+        <h2>My web projects</h2>
+        <div class="cards">
+        </div>
     </div>
     <script>
-        const container = document.querySelector("#app")
+        const container = document.querySelector(".cards")
         const BASE_URL = "https://bqio.github.io/"
 
         const createLink = (name, href) => {
             const a = document.createElement('a')
             a.href = href
-            a.innerText = name
+            a.innerHTML = `<div class='card'>${name}</div>`
             a.style.display = 'block'
             return a
         }
