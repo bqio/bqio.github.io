@@ -10,3 +10,6 @@
 [submodule "unicode"]
 	path = unicode
 	url = https://github.com/bqio/unicode.git
+[submodule "steamdb"]
+	path = steamdb
+	url = https://github.com/bqio/steamdb.git
