@@ -1,98 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Wut?</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 1rem;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-
-        .card {
-            padding: 4rem 8rem;
-            border: 1px solid #f1f1f1;
-            border-radius: 0.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            -webkit-box-shadow: 4px 4px 8px -5px rgba(34, 60, 80, 0.2);
-            -moz-box-shadow: 4px 4px 8px -5px rgba(34, 60, 80, 0.2);
-            box-shadow: 4px 4px 8px -5px rgba(34, 60, 80, 0.2);
-            font-size: 1.5rem;
-        }
-        .card:hover {
-            background-color: #3d94ed;
-            color: white;
-            border: 1px solid #3d94ed;
-        }
-        a {
-            text-decoration: none;
-            color: black;
-        }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div id="app">
-        <h2>My web projects</h2>
-        <div class="cards">
+      <h1>My web projects:</h1>
+      <div class="cards">
+        <div class="card" v-for="project in projects" @click="open(project)">
+          {{project}}
         </div>
+      </div>
     </div>
-    <script>
-        const container = document.querySelector(".cards")
-        const BASE_URL = "https://bqio.github.io/"
-
-        const createLink = (name, href) => {
-            const a = document.createElement('a')
-            a.href = href
-            a.innerHTML = `<div class='card'>${name}</div>`
-            a.style.display = 'block'
-            return a
-        }
-
-        const matchAll = (data, regexp) => {
-            let temp
-            const results = []
-            while ((temp = regexp.exec(data)) !== null) {
-                results.push(temp)
-            }
-            return results
-        }
-
-        const start = async () => {
-            const response = await fetch("https://raw.githubusercontent.com/bqio/bqio.github.io/master/.gitmodules")
-            const data = await response.text()
-            const regexp = /path = (.*)\n/g
-            const names = matchAll(data, regexp).map(el => el[1])
-
-            for (let name of names) {
-                container.appendChild(createLink(name, BASE_URL + name))
-            }
-        }
-
-        start()
-    </script>
-</body>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
