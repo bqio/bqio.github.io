@@ -1,31 +1,88 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --dark-color: #131313;
+  --light-dark-color: #303030;
+  --gray-color: #cdcdcd;
+}
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Rubik", sans-serif;
-  padding: 4rem;
+  font-family: 'Roboto', sans-serif;
+  padding: 4rem 10rem;
+  background-color: var(--dark-color);
 }
 
-h1 {
-  font-size: 18px;
-  margin-bottom: 1rem;
+@media (max-width: 992px) {
+  body {
+    padding: 4rem 1rem;
+  }
 }
 
 .card {
-  padding-bottom: 1rem;
-  font-size: 14px;
-  padding: 7px 0;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: var(--light-dark-color);
+  color: var(--gray-color);
+  box-shadow: 1px 1px 3px 0px var(--black-color);
   cursor: pointer;
+  margin-bottom: 1rem;
 }
 
-.card:hover {
-  text-decoration: underline;
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 1rem;
 }
 
-.card::before {
-  content: "#";
-  margin-right: 1rem;
+.card-image {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 1px 1px 3px 0px var(--black-color);
+}
+
+.card-title {
+  font-size: 1.4rem;
+}
+
+.card div {
+  margin-bottom: 1rem;
+}
+
+.card div:last-child {
+  margin-bottom: 0;
+}
+
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+
+.avatar-title {
+  color: var(--gray-color);
+  font-size: 1.5rem;
+}
+
+[v-cloak] {
+  display: none;
 }

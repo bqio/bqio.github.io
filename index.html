@@ -9,10 +9,18 @@
   </head>
   <body>
     <div id="app">
-      <h1>My web projects:</h1>
-      <div class="cards">
-        <div class="card" v-for="project in projects" @click="open(project)">
-          {{project}}
+      <div class="wrapper" v-if="isLoaded" v-cloak>
+        <div class="avatar-wrapper">
+          <div class="avatar-container">
+            <img class="avatar" :src="avatarUrl" alt="" />
+            <div class="avatar-title">{{ username }} portfolio</div>
+          </div>
+        </div>
+        <div class="card" v-for="repo in repos" @click="open(repo.html_url)">
+          <div class="card-title">{{ repo.name }}</div>
+          <div class="card-desc" v-if="repo.description">
+            {{ repo.description }}
+          </div>
         </div>
       </div>
     </div>

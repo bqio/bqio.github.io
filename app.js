@@ -1,33 +1,30 @@
-const matchAll = (data, regexp) => {
-  let temp;
-  const results = [];
-  while ((temp = regexp.exec(data)) !== null) {
-    results.push(temp);
-  }
-  return results;
-};
+const GITHUB_USERNAME = "bqio"; // CHANGE THAT
 
-const fetchProjects = async () => {
-  const response = await fetch(
-    "https://raw.githubusercontent.com/bqio/bqio.github.io/master/.gitmodules"
-  );
-  const data = await response.text();
-  const regexp = /path = (.*)\n/g;
-  return matchAll(data, regexp).map((el) => el[1]);
+const API_REPOS_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`;
+const API_AVATAR_URL = `https://github.com/${GITHUB_USERNAME}.png`;
+
+const fetchRepos = async () => {
+  const response = await fetch(API_REPOS_URL);
+  const json = await response.json();
+  return json;
 };
 
 Vue.createApp({
   data() {
     return {
-      projects: [],
+      repos: [],
+      username: GITHUB_USERNAME,
+      avatarUrl: API_AVATAR_URL,
+      isLoaded: false,
     };
   },
   methods: {
-    open(rep) {
-      window.open(`https://bqio.github.io/${rep}`, "_blank");
+    open(url) {
+      window.open(url, "_blank");
     },
   },
   async mounted() {
-    this.projects = await fetchProjects();
+    this.repos = await fetchRepos();
+    this.isLoaded = true;
   },
 }).mount("#app");
