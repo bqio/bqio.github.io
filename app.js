@@ -25,6 +25,7 @@ Vue.createApp({
   },
   async mounted() {
     this.repos = await fetchRepos();
+    document.title = this.username;
     this.isLoaded = true;
   },
 }).mount("#app");
