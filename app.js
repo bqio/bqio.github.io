@@ -9,6 +9,12 @@ const fetchRepos = async () => {
   return json;
 };
 
+const randInt = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 Vue.createApp({
   data() {
     return {
@@ -21,6 +27,9 @@ Vue.createApp({
   methods: {
     open(url) {
       window.open(url, "_blank");
+    },
+    randIcon() {
+      return `&#${randInt(0x1f300, 0x1f5ff)};`;
     },
   },
   async mounted() {

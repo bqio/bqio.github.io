@@ -18,7 +18,9 @@
         <div class="avatar-wrapper">
           <div class="avatar-container">
             <img class="avatar" :src="avatarUrl" alt="" />
-            <div class="avatar-title">{{ username }} portfolio</div>
+            <div class="avatar-title">
+              {{ username }} portfolio <span v-html="randIcon()"></span>
+            </div>
           </div>
         </div>
         <div class="card" v-for="repo in repos" @click="open(repo.html_url)">
