@@ -13,3 +13,6 @@
 [submodule "steamdb"]
 	path = steamdb
 	url = https://github.com/bqio/steamdb.git
+[submodule "pyio"]
+	path = pyio
+	url = https://github.com/bqio/pyio.git
