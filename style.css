@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 :root {
   --black-color: #000000;
@@ -13,14 +13,25 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  padding: 4rem 10rem;
+  font-family: "Roboto", sans-serif;
+  padding: 4rem 10rem 2rem 10rem;
   background-color: var(--dark-color);
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
 }
 
 @media (max-width: 992px) {
   body {
     padding: 4rem 1rem;
+  }
+
+  .card-list {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -31,7 +42,10 @@ body {
   color: var(--gray-color);
   box-shadow: 1px 1px 3px 0px var(--black-color);
   cursor: pointer;
-  margin-bottom: 1rem;
+}
+
+.card:hover {
+  color: var(--white-color);
 }
 
 .card-grid {

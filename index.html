@@ -23,10 +23,12 @@
             </div>
           </div>
         </div>
-        <div class="card" v-for="repo in repos" @click="open(repo.html_url)">
-          <div class="card-title">{{ repo.name }}</div>
-          <div class="card-desc" v-if="repo.description">
-            {{ repo.description }}
+        <div class="card-list">
+          <div class="card" v-for="repo in repos" @click="open(repo.html_url)">
+            <div class="card-title">{{ repo.name }}</div>
+            <div class="card-desc" v-if="repo.description">
+              {{ repo.description }}
+            </div>
           </div>
         </div>
       </div>
