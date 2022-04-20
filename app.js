@@ -1,6 +1,6 @@
 const GITHUB_USERNAME = "bqio"; // CHANGE THAT
 
-const API_REPOS_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`;
+const API_REPOS_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=pushed`;
 const API_AVATAR_URL = `https://github.com/${GITHUB_USERNAME}.png`;
 
 const fetchRepos = async () => {
