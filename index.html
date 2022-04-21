@@ -29,6 +29,9 @@
             <div class="card-desc" v-if="repo.description">
               {{ repo.description }}
             </div>
+            <div class="card-date">
+              {{ new Date(repo.updated_at).toLocaleDateString() }}
+            </div>
           </div>
         </div>
       </div>
