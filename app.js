@@ -29,7 +29,7 @@ Vue.createApp({
       window.open(url, "_blank");
     },
     randIcon() {
-      return `&#${randInt(0x1f300, 0x1f5ff)};`;
+      return `&#${randInt(0x1f601, 0x1f64f)};`;
     },
   },
   async mounted() {
