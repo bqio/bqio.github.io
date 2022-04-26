@@ -16,3 +16,6 @@
 [submodule "pyio"]
 	path = pyio
 	url = https://github.com/bqio/pyio.git
+[submodule "webstuff"]
+	path = webstuff
+	url = https://github.com/bqio/webstuff.git
