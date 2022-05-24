@@ -19,3 +19,6 @@
 [submodule "webstuff"]
 	path = webstuff
 	url = https://github.com/bqio/webstuff.git
+[submodule "rutr"]
+	path = rutr
+	url = https://github.com/bqio/rutr.git
