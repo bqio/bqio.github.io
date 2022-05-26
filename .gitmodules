@@ -22,3 +22,6 @@
 [submodule "rutr"]
 	path = rutr
 	url = https://github.com/bqio/rutr.git
+[submodule "nxdb-switch"]
+	path = nxdb-switch
+	url = https://github.com/bqio/nxdb-switch.git
