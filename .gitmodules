@@ -25,3 +25,6 @@
 [submodule "nxdb-switch"]
 	path = nxdb-switch
 	url = https://github.com/bqio/nxdb-switch.git
+[submodule "nxdb2"]
+	path = nxdb2
+	url = https://github.com/bqio/nxdb2.git
