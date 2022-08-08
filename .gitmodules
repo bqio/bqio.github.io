@@ -13,15 +13,6 @@
 [submodule "pyio"]
 	path = pyio
 	url = https://github.com/bqio/pyio.git
-[submodule "webstuff"]
-	path = webstuff
-	url = https://github.com/bqio/webstuff.git
-[submodule "rutr"]
-	path = rutr
-	url = https://github.com/bqio/rutr.git
 [submodule "nxdb-switch"]
 	path = nxdb-switch
 	url = https://github.com/bqio/nxdb-switch.git
-[submodule "nxdb2"]
-	path = nxdb2
-	url = https://github.com/bqio/nxdb2.git
