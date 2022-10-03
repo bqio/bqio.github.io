@@ -16,3 +16,6 @@
 [submodule "nxdb-switch"]
 	path = nxdb-switch
 	url = https://github.com/bqio/nxdb-switch.git
+[submodule "pet-vue3-todo"]
+	path = pet-vue3-todo
+	url = https://github.com/bqio/pet-vue3-todo.git
