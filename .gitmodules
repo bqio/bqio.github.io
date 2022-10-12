@@ -19,3 +19,6 @@
 [submodule "pet-vue3-todo"]
 	path = pet-vue3-todo
 	url = https://github.com/bqio/pet-vue3-todo.git
+[submodule "pet-vue3-blog-ts"]
+	path = pet-vue3-blog-ts
+	url = https://github.com/bqio/pet-vue3-blog-ts.git
