@@ -2,39 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="https://github.com/github.png"
-      type="image/png"
-    />
-    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <title>bqio</title>
   </head>
   <body>
-    <div id="app">
-      <div class="wrapper" v-if="isLoaded" v-cloak>
-        <div class="avatar-wrapper">
-          <div class="avatar-container">
-            <img class="avatar" :src="avatarUrl" alt="" />
-            <div class="avatar-title">
-              {{ username }} portfolio <span v-html="randIcon()"></span>
-            </div>
-          </div>
-        </div>
-        <div class="card-list">
-          <div class="card" v-for="repo in repos" @click="open(repo.html_url)">
-            <div class="card-title">{{ repo.name }}</div>
-            <div class="card-desc" v-if="repo.description">
-              {{ repo.description }}
-            </div>
-          </div>
-        </div>
+    <div class="wrapper">
+      <div class="lds-ripple" id="loader">
+        <div></div>
+        <div></div>
       </div>
-      <div v-else class="wait"><div class="lds-ripple"><div></div><div></div></div></div>
+      <div id="app">
+        <img class="avatar" src="https://github.com/bqio.png" alt="avatar" />
+        <div class="username">bqio</div>
+        <div class="card-list" id="card-list"></div>
+      </div>
     </div>
-    <script src="https://unpkg.com/vue@3"></script>
-    <script src="app.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
